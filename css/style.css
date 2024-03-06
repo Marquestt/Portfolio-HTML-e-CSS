@@ -1,4 +1,4 @@
-:root { /* Criando variáveis para as cores dentro do CSS(podia-se se criar variáveis para as fontes também) */
+:root { /* Criando variáveis para as cores dentro do CSS(podia-se criar variáveis para as fontes também) */
     --cor-primaria: #000;
     --cor-secundaria: #F6F6F6;
     --cor-terciaria: #22D4FD;
@@ -11,7 +11,7 @@
 body {
     /*height: 100vh; vh: viewport height = altura da tela do navegador */
     box-sizing: border-box; /* Para que o conteúdo filho não saia de dentro do conteúdo pai mesmo quando editado */
-    background-color: var(--cor-primaria); /* Aplicando as variáveis para as cores dentro do CSS*/
+    background-color: var(--cor-primaria); /* Aplicando as variáveis para as cores dentro do CSS */
     color: var(--cor-secundaria);
 }
 .cabecalho {
@@ -31,9 +31,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 82px;
 }
 .apresentacao__conteudo {
-    width: 615px;
+    width: 50%;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -41,11 +42,11 @@ body {
 .tituloDestaque {
     color: var(--cor-terciaria);
 }
-.apresentacao__links__link {
+.apresentacao__links__navegacao {
     display: flex;
     justify-content: center;
     gap: 16px;
-    width: 378px;
+    width: 50%;
     text-align: center;
     border-radius: 8px;
     padding: 21.5px 0;
@@ -54,11 +55,11 @@ body {
     text-decoration: none;
     font-weight: 600;
 }
-.apresentacao__links__link:hover {
+.apresentacao__links__navegacao:hover {
     background-color: var(--cor-hover);
 }
 .apresentacao__conteudo__titulo {
-    font-size: 36px;
+    font-size: 2.25rem;
     font-family: 'Krona One', sans-serif;
 }
 .apresentacao__links {
@@ -71,12 +72,15 @@ body {
 .apresentacao__links__subtitulo {
     font-family: 'Krona One', sans-serif;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 1.5rem;
 
 }
-.apresentacao__links__link, .apresentacao__conteudo__texto, .rodape, .cabecalho__menu__link {
+.apresentacao__links__navegacao, .apresentacao__conteudo__texto, .rodape, .cabecalho__menu__link {
     font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
+    font-size: 1.5rem;
+}
+.apresentacao__imagem {
+    width: 50%;
 }
 .rodape {
     padding: 24px;
@@ -84,4 +88,20 @@ body {
     text-align: center;
     background-color: var(--cor-terciaria);
     color: var(--cor-primaria);
+}
+
+@media (max-width: 1200px) {
+    .cabecalho {
+        padding: 10%;
+    }
+    .cabecalho__menu {
+        justify-content: center ;
+    }
+    .apresentacao {
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+    .apresentacao__conteudo {
+        width: auto;
+    }
 }
